@@ -27,7 +27,7 @@ namespace Assets.Scripts.Camera
         private void Update()
         {
             position = transform.position;
-
+            // TODO: Убрать управление камерой
             var scroll = Input.GetAxis("Mouse ScrollWheel");
             var horizontal = Input.GetAxis("Horizontal");
             var vertical = Input.GetAxis("Vertical");

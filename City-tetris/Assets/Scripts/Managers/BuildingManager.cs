@@ -11,6 +11,7 @@ namespace Assets.Scripts.Managers
 {
     public class BuildingManager : Singleton<BuildingManager>
     {
+        //TODO: Создать отделные классы для работы с препятствиями и с зумом
         [SerializeField] Module mainModulePrefab;
         [SerializeField] Module[] modulePrefabs;
         [SerializeField] Obstacle obstacle;
@@ -43,6 +44,7 @@ namespace Assets.Scripts.Managers
         [SerializeField] readonly float centerProbability = 0.3f;
         [SerializeField] readonly float uniqueProbability = 0.1f;
 
+        //TODO: Сделать отдельный класс для управления типом, вероятностью и цветом
         public Material defaultModuleMaterial;
         public Color MainColor;
         public Color ResidentialColor;
@@ -50,7 +52,6 @@ namespace Assets.Scripts.Managers
         public Color CenterColor;
         public Color UniqueColor;
 
-        // TODO: Подумать над тем, как еще можно связать воедино поля типа, вероятности и цвета
         private Dictionary<Module.TypeEnum, float> typeProbabilityDict;
         public Dictionary<Module.TypeEnum, Color> typeColorDict;
 
@@ -312,7 +313,7 @@ namespace Assets.Scripts.Managers
             StartCoroutine(WaitTapping());
 
             if (tetrisToggle.isOn)
-            {
+            {// TODO: Вынести эти варианты в инспектор
                 ZoomOut();
                 zoomCoefficient = 0.6f;
             }
@@ -356,7 +357,7 @@ namespace Assets.Scripts.Managers
         {
             var anchor = GridSize / 2 - ringNumber;
             var sideLength = 2 * ringNumber + 1;
-            var obstaclesAmount = ringNumber + expandValues[currentExpandCount - 1];
+            var obstaclesAmount = ringNumber + expandValues[currentExpandCount - 1];// TODO: Вынести формулу количества перпятсвтвий в инспектор
 
             var coordinates = new Vector2Int[obstaclesAmount];
 

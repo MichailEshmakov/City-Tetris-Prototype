@@ -5,7 +5,7 @@ namespace Assets.Scripts.Managers
 {
     public class Timer : Singleton<Timer>
     {
-        [SerializeField] private Slider slider;
+        [SerializeField] private Slider slider;// TODO: Сделать картинку место слайдера
 
         [SerializeField] private float gameTime;
         [SerializeField] private bool isActive;

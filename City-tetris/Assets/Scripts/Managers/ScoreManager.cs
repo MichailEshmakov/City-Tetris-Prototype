@@ -14,16 +14,6 @@ namespace Assets.Scripts.Managers
             Score = 0;
         }
 
-        // Start is called before the first frame update
-        private void Start()
-        {
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-        }
-
         public void CountScore(Grid map, Vector2Int point, Module module)
         {
             var pointsOfModule = GetPointsOfModule(point, module);
