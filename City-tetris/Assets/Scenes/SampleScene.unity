@@ -2203,7 +2203,7 @@ MonoBehaviour:
   placedObstacles: []
   zoomCoefficient: 0.666
   defaultModuleMaterial: {fileID: 2100000, guid: a4942f21dbfe7f44981099faaf8feab3, type: 2}
-  MainColor: {r: 0, g: 0, b: 0, a: 0}
+  MainColor: {r: 1, g: 0.5330188, b: 0.8077698, a: 1}
   ResidentialColor: {r: 0, g: 1, b: 0, a: 1}
   IndustrialColor: {r: 1, g: 1, b: 0, a: 1}
   CenterColor: {r: 0, g: 0.038576126, b: 1, a: 1}
