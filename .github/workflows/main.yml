@@ -1,0 +1,32 @@
+name: Build project
+
+on: [push, pull_request]
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+    - uses: actions/cache@v1.1.0
+      with:
+        path: City-tertis/Library
+        key: Library-City-tetris-StandaloneWindows64
+        restore-keys: |
+          Library-City-tetris-
+          Library-      
+    - uses: webbertakken/unity-builder@v0.10
+      with:
+        projectPath: City-tetris
+        unityVersion: 2020.1.13f1
+        targetPlatform: StandaloneWindows64
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Build
+        path: build
